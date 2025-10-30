@@ -1,12 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X, Heart } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  
+  // Check if we're on a standalone page (not homepage)
+  const isStandalonePage = pathname !== "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +33,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || isStandalonePage
           ? "bg-white/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
@@ -38,14 +43,14 @@ export default function Navbar() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
             <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
-              isScrolled ? "bg-blue-600" : "bg-white"
+              isScrolled || isStandalonePage ? "bg-blue-600" : "bg-white"
             }`}>
               <Heart className={`w-6 h-6 transition-colors ${
-                isScrolled ? "text-white" : "text-blue-600"
+                isScrolled || isStandalonePage ? "text-white" : "text-blue-600"
               }`} />
             </div>
             <span className={`text-2xl font-bold transition-colors ${
-              isScrolled ? "text-gray-900" : "text-white"
+              isScrolled || isStandalonePage ? "text-gray-900" : "text-white"
             }`}>
               AAHRED
             </span>
@@ -58,7 +63,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 className={`font-medium transition-colors hover:text-blue-600 ${
-                  isScrolled ? "text-gray-700" : "text-white hover:text-yellow-300"
+                  isScrolled || isStandalonePage ? "text-gray-700" : "text-white hover:text-yellow-300"
                 }`}
               >
                 {link.label}
@@ -67,7 +72,7 @@ export default function Navbar() {
             <a
               href="/#contact"
               className={`px-6 py-2.5 rounded-full font-semibold transition-all ${
-                isScrolled
+                isScrolled || isStandalonePage
                   ? "bg-blue-600 text-white hover:bg-blue-700"
                   : "bg-white text-blue-900 hover:bg-yellow-400"
               }`}
@@ -80,7 +85,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-2 rounded-lg transition-colors ${
-              isScrolled
+              isScrolled || isStandalonePage
                 ? "text-gray-900 hover:bg-gray-100"
                 : "text-white hover:bg-white/10"
             }`}
