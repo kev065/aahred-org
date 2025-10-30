@@ -94,9 +94,20 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-400">
-              © {currentYear} AAHRED. All rights reserved.
-            </p>
+            <div className="text-sm text-gray-400 text-center md:text-left">
+              <p>© {currentYear} AAHRED. All rights reserved.</p>
+              <p className="mt-1">
+                Website designed by{" "}
+                <a 
+                  href="https://valcheq.com" 
+                  target="_blank" 
+                  rel="noopener"
+                  className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
+                >
+                  Valcheq Technologies
+                </a>
+              </p>
+            </div>
             <div className="flex gap-6 text-sm">
               <a href="/privacy" className="text-gray-400 hover:text-white transition-colors">
                 Privacy Policy
