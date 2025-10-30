@@ -18,11 +18,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: "About", href: "#about" },
-    { label: "Activities", href: "#activities" },
-    { label: "Impact", href: "#impact" },
-    { label: "Programs", href: "#programs" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "/#about" },
+    { label: "Activities", href: "/#activities" },
+    { label: "Impact", href: "/#impact" },
+    { label: "Programs", href: "/#programs" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -65,7 +65,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               className={`px-6 py-2.5 rounded-full font-semibold transition-all ${
                 isScrolled
                   ? "bg-blue-600 text-white hover:bg-blue-700"
@@ -116,7 +116,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block w-full px-6 py-3 bg-blue-600 text-white text-center rounded-full font-semibold hover:bg-blue-700 transition-colors"
               >

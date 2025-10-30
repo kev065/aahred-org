@@ -173,13 +173,13 @@ export default function Programs() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="#contact"
+                href="/#contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-900 rounded-full font-semibold hover:bg-yellow-400 transition-colors duration-300"
               >
                 Get Started Today
               </a>
               <a
-                href="#about"
+                href="/#about"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-blue-900 transition-all duration-300"
               >
                 Learn More

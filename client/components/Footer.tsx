@@ -6,19 +6,19 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: "About Us", href: "#about" },
-    { label: "Core Activities", href: "#activities" },
-    { label: "Our Impact", href: "#impact" },
-    { label: "Programs", href: "#programs" },
-    { label: "Contact", href: "#contact" },
+    { label: "About Us", href: "/#about" },
+    { label: "Core Activities", href: "/#activities" },
+    { label: "Our Impact", href: "/#impact" },
+    { label: "Programs", href: "/#programs" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   const programs = [
-    { label: "Entrepreneurship Support", href: "#programs" },
-    { label: "SME Growth", href: "#programs" },
-    { label: "Digital Inclusion", href: "#programs" },
-    { label: "Financial Access", href: "#programs" },
-    { label: "Policy Advocacy", href: "#programs" },
+    { label: "Entrepreneurship Support", href: "/#programs" },
+    { label: "SME Growth", href: "/#programs" },
+    { label: "Digital Inclusion", href: "/#programs" },
+    { label: "Financial Access", href: "/#programs" },
+    { label: "Policy Advocacy", href: "/#programs" },
   ];
 
   return (

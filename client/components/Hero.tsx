@@ -116,14 +116,14 @@ export default function Hero() {
             className="flex flex-wrap justify-center gap-4 pt-8"
           >
             <a
-              href="#programs"
+              href="/#programs"
               className="group inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-900 rounded-full font-semibold text-lg hover:bg-yellow-400 hover:text-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               Explore Our Programs
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="#contact"
+              href="/#contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-transparent text-white border-2 border-white rounded-full font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300"
             >
               Get Involved
