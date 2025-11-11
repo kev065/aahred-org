@@ -33,11 +33,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isStandalonePage
-          ? "bg-white/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -46,9 +42,9 @@ export default function Navbar() {
             <Image
               src="/aahred_logo.png"
               alt="AAHRED"
-              width={140}
-              height={36}
-              className="h-8 w-auto transition-all"
+              width={180}
+              height={50}
+              className="h-12 w-auto transition-all"
               priority
             />
           </a>
@@ -59,20 +55,14 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className={`font-medium transition-colors hover:text-blue-600 ${
-                  isScrolled || isStandalonePage ? "text-gray-700" : "text-white hover:text-yellow-300"
-                }`}
+                className="font-medium text-gray-700 transition-colors hover:text-blue-600"
               >
                 {link.label}
               </a>
             ))}
             <a
               href="/#contact"
-              className={`px-6 py-2.5 rounded-full font-semibold transition-all ${
-                isScrolled || isStandalonePage
-                  ? "bg-blue-600 text-white hover:bg-blue-700"
-                  : "bg-white text-blue-900 hover:bg-yellow-400"
-              }`}
+              className="px-6 py-2.5 rounded-full font-semibold transition-all bg-blue-600 text-white hover:bg-blue-700"
             >
               Get Involved
             </a>
@@ -81,11 +71,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 rounded-lg transition-colors ${
-              isScrolled || isStandalonePage
-                ? "text-gray-900 hover:bg-gray-100"
-                : "text-white hover:bg-white/10"
-            }`}
+            className="md:hidden p-2 rounded-lg transition-colors text-gray-900 hover:bg-gray-100"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
