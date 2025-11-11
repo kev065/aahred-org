@@ -167,6 +167,8 @@ export default function Contact() {
                     <a
                       key={social.label}
                       href={social.href}
+                      target="_blank"
+                      rel="noopener"
                       aria-label={social.label}
                       className={`w-12 h-12 bg-white rounded-lg flex items-center justify-center text-gray-600 ${social.color} transition-colors shadow-md hover:shadow-lg`}
                     >
