@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,19 +42,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group">
-            <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
-              isScrolled || isStandalonePage ? "bg-blue-600" : "bg-white"
-            }`}>
-              <Heart className={`w-6 h-6 transition-colors ${
-                isScrolled || isStandalonePage ? "text-white" : "text-blue-600"
-              }`} />
-            </div>
-            <span className={`text-2xl font-bold transition-colors ${
-              isScrolled || isStandalonePage ? "text-gray-900" : "text-white"
-            }`}>
-              AAHRED
-            </span>
+          <a href="/" className="flex items-center gap-3 group">
+            <Image
+              src="/aahred_logo.png"
+              alt="AAHRED"
+              width={140}
+              height={36}
+              className="h-8 w-auto transition-all"
+              priority
+            />
           </a>
 
           {/* Desktop Navigation */}
