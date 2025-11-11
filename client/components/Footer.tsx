@@ -49,10 +49,10 @@ export default function Footer() {
                   info@aahred.org
                 </a>
               </div>
-              <div className="flex items-center gap-3 text-sm">
+              {/* <div className="flex items-center gap-3 text-sm">
                 <Phone className="w-5 h-5 text-blue-400" />
                 <span>+254 XXX XXX XXX</span>
-              </div>
+              </div>   */}
             </div>
           </div>
 

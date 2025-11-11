@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Mail, MapPin, Send, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import { useState } from "react";
 
 export default function Contact() {
@@ -46,20 +46,20 @@ export default function Contact() {
       link: "mailto:info@aahred.org",
       color: "from-green-500 to-emerald-500",
     },
-    {
-      icon: Phone,
-      title: "Call Us",
-      content: "+254 XXX XXX XXX",
-      link: "tel:+254XXXXXXXXX",
-      color: "from-purple-500 to-pink-500",
-    },
+    // {
+    //   icon: Phone,
+    //   title: "Call Us",
+    //   content: "+254 XXX XXX XXX",
+    //   link: "tel:+254XXXXXXXXX",
+    //   color: "from-purple-500 to-pink-500",
+    // },
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook", color: "hover:text-blue-600" },
-    { icon: Twitter, href: "#", label: "Twitter", color: "hover:text-sky-500" },
-    { icon: Linkedin, href: "#", label: "LinkedIn", color: "hover:text-blue-700" },
-    { icon: Instagram, href: "#", label: "Instagram", color: "hover:text-pink-600" },
+    { icon: Facebook, href: "https://www.facebook.com/AAHRED.ORG", label: "Facebook", color: "hover:text-blue-600" },
+    { icon: Twitter, href: "https://x.com/AAHRED_Africa", label: "Twitter", color: "hover:text-sky-500" },
+    // { icon: Linkedin, href: "#", label: "LinkedIn", color: "hover:text-blue-700" },
+    // { icon: Instagram, href: "#", label: "Instagram", color: "hover:text-pink-600" },
   ];
 
   return (
