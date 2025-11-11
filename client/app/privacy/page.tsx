@@ -298,7 +298,7 @@ export default function PrivacyPolicy() {
                 <p className="text-gray-700">Privacy Officer</p>
                 <p className="text-gray-700">Nairobi, Kenya</p>
                 <p className="text-gray-700">Email: info@aahred.org</p>
-                <p className="text-gray-700">Phone: +254 XXX XXX XXX</p>
+                {/* <p className="text-gray-700">Phone: +254 XXX XXX XXX</p> */}
               </div>
             </section>
 
