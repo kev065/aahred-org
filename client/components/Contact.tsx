@@ -11,13 +11,44 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message! We'll get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsLoading(true);
+    setSubmitStatus("idle");
+
+    try {
+      const formDataToSend = new FormData(e.currentTarget);
+      formDataToSend.append("access_key", "43c9e142-62d3-4ed8-85ca-e5bf52a7399f");
+
+      const object = Object.fromEntries(formDataToSend);
+      const json = JSON.stringify(object);
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      }).then((res) => res.json());
+
+      if (res.success) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        console.log("Success", res);
+      } else {
+        setSubmitStatus("error");
+        console.log("Error", res);
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+      console.error("Form submission error:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -156,6 +187,22 @@ export default function Contact() {
             variants={fadeInUp}
           >
             <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-xl">
+              {/* Success Message */}
+              {submitStatus === "success" && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <p className="text-green-800 font-semibold">✓ Thank you for your message!</p>
+                  <p className="text-green-700 text-sm">We'll get back to you soon.</p>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === "error" && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-800 font-semibold">✗ Something went wrong</p>
+                  <p className="text-red-700 text-sm">Please try again or contact us directly.</p>
+                </div>
+              )}
+
               <div className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
@@ -223,10 +270,20 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                  disabled={isLoading}
+                  className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
                 >
-                  Send Message
-                  <Send className="w-5 h-5" />
+                  {isLoading ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="w-5 h-5" />
+                    </>
+                  )}
                 </button>
               </div>
             </form>
