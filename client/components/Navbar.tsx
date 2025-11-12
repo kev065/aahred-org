@@ -23,6 +23,38 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle hash navigation with navbar offset
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (!hash) return;
+
+      const sectionId = hash.substring(1);
+      const section = document.getElementById(sectionId);
+
+      if (section) {
+        // Use setTimeout to ensure DOM is ready
+        setTimeout(() => {
+          const navbarHeight = 80; // h-20 = 80px
+          const elementPosition = section.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - navbarHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }, 0);
+      }
+    };
+
+    // Handle initial hash on page load
+    handleHashChange();
+
+    // Handle hash changes
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   const navLinks = [
     { label: "About", href: "/#about" },
     { label: "Activities", href: "/#activities" },
@@ -55,6 +87,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="font-medium text-gray-700 transition-colors hover:text-blue-600"
               >
                 {link.label}
@@ -62,6 +95,7 @@ export default function Navbar() {
             ))}
             <a
               href="/#contact"
+              onClick={() => setIsMobileMenuOpen(false)}
               className="px-6 py-2.5 rounded-full font-semibold transition-all bg-blue-600 text-white hover:bg-blue-700"
             >
               Get Involved
