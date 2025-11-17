@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "AAHRED - Driving Development and Empowerment in Kenya",
   description: "Africa Alliance for Health Research and Economic Development - Advancing development, leadership, and growth in entrepreneurship, digital empowerment, economic inclusion, and research across Kenya.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
