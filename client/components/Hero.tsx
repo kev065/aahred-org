@@ -61,10 +61,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight"
           >
-            Driving Development &
-            <span className="block text-transparent bg-clip-text bg-linear-to-r from-yellow-200 to-yellow-400">
-              Economic Empowerment
-            </span>
+            Driving Development & Economic Empowerment
           </motion.h1>
 
           {/* Subtitle */}
@@ -74,7 +71,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl sm:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed"
           >
-            Africa Alliance for Health Research and Economic Development (AAHRED) 
+            Africa Alliance for Health Research and Economic Development (AAHRED)
             - Advancing entrepreneurship, digital empowerment, and economic inclusion across Kenya
           </motion.p>
 
