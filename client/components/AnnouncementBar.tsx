@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function AnnouncementBar() {
   const [isVisible, setIsVisible] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
@@ -16,13 +15,6 @@ export default function AnnouncementBar() {
     if (!isDismissed) {
       setIsVisible(true);
     }
-
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleDismiss = () => {
@@ -35,7 +27,7 @@ export default function AnnouncementBar() {
 
   return (
     <AnimatePresence>
-      {isVisible && !isScrolled && (
+      {isVisible && (
         <motion.div
            initial={{ height: 0, opacity: 0 }}
            animate={{ height: "auto", opacity: 1 }}
