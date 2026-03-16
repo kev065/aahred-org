@@ -29,10 +29,10 @@ export default function AnnouncementBar() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-           initial={{ height: 0, opacity: 0 }}
-           animate={{ height: "auto", opacity: 1 }}
-           exit={{ height: 0, opacity: 0 }}
-           className="bg-red-600 text-white overflow-hidden relative shadow-md w-full z-50 flex-shrink-0"
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          className="bg-red-600 text-white overflow-hidden relative shadow-md w-full z-50 flex-shrink-0"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-6">
             <div className="flex items-start gap-3 flex-1 text-sm sm:text-base pr-8 sm:pr-0">
@@ -57,7 +57,7 @@ export default function AnnouncementBar() {
                 </span>
               </div>
             </div>
-            
+
             <div className="flex items-center justify-start sm:justify-end w-full sm:w-auto mt-1 sm:mt-0 pl-8 sm:pl-0">
               <a
                 href="/aahred_notice.pdf"
@@ -66,7 +66,7 @@ export default function AnnouncementBar() {
                 className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white text-red-700 hover:bg-red-50 text-sm font-bold rounded-full transition-colors shadow-sm whitespace-nowrap"
               >
                 <FileText className="w-4 h-4" />
-                View Document
+                View Notice
               </a>
             </div>
           </div>
