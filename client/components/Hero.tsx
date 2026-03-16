@@ -41,18 +41,6 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          {/* Logo/Badge */}
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex justify-center"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <Heart className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">Empowering Communities Since 2016</span>
-            </div>
-          </motion.div>
 
           {/* Main heading */}
           <motion.h1
