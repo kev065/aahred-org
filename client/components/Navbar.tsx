@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import AnnouncementBar from "./AnnouncementBar";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,7 +65,6 @@ export default function Navbar() {
 
   return (
     <>
-      <AnnouncementBar />
       <nav
         className={`sticky top-0 z-50 w-full transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg`}
       >
